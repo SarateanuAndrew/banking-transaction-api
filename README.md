@@ -6,9 +6,9 @@
 
 ## What is this?
 
-BankFlow API is the server-side backbone of a mobile banking experience. It handles everything a user expects when they open a banking app on their phone, creating an account, checking a balance, moving money to a friend, reviewing last month's transactions. The mobile client talks to this API; this API talks to the database.
+BankFlow API is the server side backbone of a mobile banking experience. It handles everything a user expects when they open a banking app on their phone, creating an account, checking a balance, moving money to a friend, reviewing last month's transactions. The mobile client talks to this API, this API talks to the database.
 
-This release is a **proof of concept**: the architecture is production-oriented, the security foundations are real, but it has not been hardened, audited, or load-tested for a live environment. Think of it as the first honest version of something bigger, built to validate the idea, prove the stack, and create a solid base to grow from.
+This release is a **proof of concept**: the architecture is production oriented, the security foundations are real, but it has not been hardened, audited, or load tested for a live environment. Think of it as the first honest version of something bigger, built to validate the idea, prove the stack, and create a solid base to grow from.
 
 The goal was not to cut corners with a prototype mindset. It was to build the real thing at a smaller scope: proper JWT auth, database migrations, containerisation, and a meaningful test suite, so that when the time comes to scale, there is nothing embarrassing to rip out.
 

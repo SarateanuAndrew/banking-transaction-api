@@ -1,0 +1,47 @@
+databaseChangeLog:
+  - changeSet:
+      id: 002-create-bank-accounts-table
+      author: andrei.sarateanu
+      changes:
+        - createTable:
+            tableName: bank_accounts
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: account_number
+                  type: varchar(20)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: balance
+                  type: decimal(19, 4)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: user_id
+                  type: uuid
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_bank_accounts_user
+                    references: users(id)
+              - column:
+                  name: account_type
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: status
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: timestamp
+                  constraints:
+                    nullable: false

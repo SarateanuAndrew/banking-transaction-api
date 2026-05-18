@@ -1,0 +1,53 @@
+databaseChangeLog:
+  - changeSet:
+      id: 003-create-transactions-table
+      author: andrei.sarateanu
+      changes:
+        - createTable:
+            tableName: transactions
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: transaction_type
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: amount
+                  type: decimal(19, 4)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: from_account_id
+                  type: uuid
+                  constraints:
+                    nullable: true
+                    foreignKeyName: fk_transactions_from_account
+                    references: bank_accounts(id)
+              - column:
+                  name: to_account_id
+                  type: uuid
+                  constraints:
+                    nullable: true
+                    foreignKeyName: fk_transactions_to_account
+                    references: bank_accounts(id)
+              - column:
+                  name: description
+                  type: varchar(500)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: status
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: timestamp
+                  constraints:
+                    nullable: false

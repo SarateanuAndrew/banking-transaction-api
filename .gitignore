@@ -43,3 +43,6 @@ out/
 
 ### Docker ###
 docker-compose.override.yml
+
+### Local tooling ###
+.claude/
